@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'schapp/css/main.css' %}" type="text/css">
  </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
 
         <!-- Header -->
@@ -23,7 +24,7 @@
         <!-- Items -->
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
-                <li> <a href=""><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Home</a></li>
+                <li> <a href=""><span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp; Home</a></li>
 
             </ul>
             <form class="navbar-form navbar-left" role="search" method="get" action="">
@@ -35,33 +36,40 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Departments
+                        <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp; Departments
                     </a>
                 </li>
 
                 <li>
                     <a href="">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Clubs
+                        <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>&nbsp; Clubs
                     </a>
                 </li>
 
                 <li>
                     <a href="">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Clubs
+                        <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp; Sports
                     </a>
                 </li>
 
                 <li>
                     <a href="">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Sports
+                        <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>&nbsp; Gallery
                     </a>
                 </li>
 
                 <li>
                     <a href="">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Clubs
+                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp; Blog
                     </a>
                 </li>
+
+                <li>
+                    <a href="">
+                        <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp; Events
+                    </a>
+                </li>
+
 
 
             </ul>
