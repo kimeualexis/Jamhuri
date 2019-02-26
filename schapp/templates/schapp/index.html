@@ -87,57 +87,20 @@
             <h3 class="text-center text-primary text-head"><b>Our Staff</b></h3>
         </div>
 
+        {% for staff in staffs %}
         <div class="col-md-3">
-            <img src="{% static 'schapp/img/soda.jpg' %}" class="img img-responsive img img-circle" alt="" style="height: 200px; width: 200px;">
+            <img src="{{ staff.staff_img.url }}" class="img img-responsive img img-circle" alt="" style="height: 200px; width: 200px;">
             <div class="staff-text">
                 <hr>
-                <h4 class="text-primary">Name</h4>
-                <h5 class="text-primary">Position</h5>
+                <h4 class="text-primary">{{ staff.name }}</h4>
+                <h5 class="text-primary">{{ staff.position }}</h5>
                 <br>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>{{ staff.staff_desc }}</p>
                 <hr>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <img src="{% static 'schapp/img/soda.jpg' %}" class="img img-responsive img img-circle" alt="" style="height: 200px; width: 200px;">
-            <div class="staff-text">
-                <hr>
-                <h4 class="text-primary">Name</h4>
-                <h5 class="text-primary">Position</h5>
-                <br>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <hr>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <img src="{% static 'schapp/img/soda.jpg' %}" class="img img-responsive img img-circle" alt="" style="height: 200px; width: 200px;">
-            <div class="staff-text">
-                <hr>
-                <h4 class="text-primary">Name</h4>
-                <h5 class="text-primary">Position</h5>
-                <br>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <hr>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <img src="{% static 'schapp/img/soda.jpg' %}" class="img img-responsive img img-circle" alt="" style="height: 200px; width: 200px;">
-            <div class="staff-text">
-                <hr>
-                <h4 class="text-primary">Name</h4>
-                <h5 class="text-primary">Position</h5>
-                <br>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <hr>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
     <!-- End of Staff -->
@@ -158,8 +121,33 @@
                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             </div>
             <div style="padding-left: 10px;">
-                <button type="button" class="btn btn-success" style="margin: 4px;">More</button>
+                <button type="button" class="btn btn-success" id="myBtn" style="margin: 4px;">More</button>
             </div>
+
+            <!-- Modal -->
+                    <div class="modal fade" id="Modal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header" style="padding:5px 5px;">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="text-center" style="color: darkslategrey;"><b>Title</b></h4>
+
+
+                                </div>
+                                <div class="modal-body" style="padding:40px 5px;">
+                                    <p>
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+            <!--End Modal-->
+
         </div>
         </div>
 
@@ -228,8 +216,34 @@
                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             </div>
             <div style="padding-left: 10px;">
-                <button type="button" class="btn btn-success" style="margin: 4px;">More</button>
+                <button type="button" class="btn btn-success" style="margin: 4px;" id="myBtn1">More</button>
             </div>
+
+            <!-- Modal -->
+                    <div class="modal fade" id="Modal1" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header" style="padding:5px 5px;">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="text-center" style="color: darkslategrey;"><b>Title</b></h4>
+
+
+                                </div>
+                                <div class="modal-body" style="padding:40px 5px;">
+                                    <p>
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+            <!--End Modal-->
+
+
         </div>
         </div>
 
@@ -328,70 +342,17 @@
                     <p class="text-center" id="italic">~Root-POI</p>
                 </div>
             </div>
+
+
         </div>
+
+
     </div>
 
     <!-- End location & contact section-->
 
-    <!-- Footer section -->
-    <div class="row">
-    <div class="page-footer" style="width: 100%; height: 40%; background-color: dimgray;">
-        <div class="col-md-4">
-            <div class="page-header">
-                <h4 class="text-center"><b>Links</b></h4>
-            </div>
-
-            <div class="col-md-12">
-                <ul class="social-network text-center">
-                    <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
-                    <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                    <li><a href=""><i class="fab fa-github fa-lg"></i></a></li>
-                    <li><a href=""><i class="fab fa-linkedin fa-lg"></i></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="page-header">
-                <h4 class="text-center"><b>Links</b></h4>
-            </div>
-            <div class="col-md-12">
-                <ul class="social-network text-center">
-                    <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
-                    <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                    <li><a href=""><i class="fab fa-github fa-lg"></i></a></li>
-                    <li><a href=""><i class="fab fa-linkedin fa-lg"></i></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="page-header">
-                <h4 class="text-center"><b>Links</b></h4>
-            </div>
-            <div class="col-md-12">
-                <ul class="social-network text-center">
-                    <li><a href="https://web.facebook.com/profile.php?id=100014287270728"><i class="fab fa-facebook fa-lg"></i></a></li>
-                    <li><a href="https://twitter.com/kimeualexis/"><i class="fab fa-twitter fa-lg"></i></a></li>
-                    <li><a href="https://github.com/kimeualexis/"><i class="fab fa-github fa-lg"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/alex-kimeu-298520118/"><i class="fab fa-linkedin fa-lg"></i></a></li>
-                </ul>
-            </div>
-        </div>
-
-    <div class="col-md-12 text-center">
-        <div class="copyright text-center" style="padding-top: 50px;
-        font-weight: 600;
-        font-size: 18px;
-        text-shadow: none;">
-            © Kodenaut 2019
-        </div>
-    </div>
-
-    </div>
-    </div>
-
-<!-- End footer -->
 
 </div>
+    {% include 'schapp/footer.html' %}
+    <script src="{% static 'schapp/js/main.js' %}"></script>
 {% endblock %}

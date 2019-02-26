@@ -5,4 +5,6 @@ app_name = 'schapp'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('departments/', views.departments, name='departments'),
+    path('clubs/', views.clubs, name='clubs'),
 ]
