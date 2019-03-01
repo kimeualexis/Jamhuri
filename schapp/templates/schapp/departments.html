@@ -13,103 +13,27 @@
 </div>
 
         <br>
+
+        {% if dpars %}
+            {% for d in dpars %}
     <div class="col-sm-3">
         <div class="panel panel-primary">
             <div class="" style="padding-left: 18px;">
-                <h3>Mathematics</h3>
-                <p>HOD</p>
+                <h3>{{ d.name }}</h3>
+                <p>{{ d.hod }}</p>
             </div>
             <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                <p>{{ d.desc }}</p>
             </div>
         </div>
     </div>
+            {% endfor %}
+    {% endif %}
 
-    <div class="col-sm-3">
-        <div class="panel panel-primary">
-            <div class="" style="padding-left: 18px;">
-                <h3>Mathematics</h3>
-                <p>HOD</p>
-            </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-3">
-        <div class="panel panel-primary">
-            <div class="" style="padding-left: 18px;">
-                <h3>Mathematics</h3>
-                <p>HOD</p>
-            </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-3">
-        <div class="panel panel-primary">
-            <div class="" style="padding-left: 18px;">
-                <h3>Mathematics</h3>
-                <p>HOD</p>
-            </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-3">
-        <div class="panel panel-primary">
-            <div class="" style="padding-left: 18px;">
-                <h3>Mathematics</h3>
-                <p>HOD</p>
-            </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-3">
-        <div class="panel panel-primary">
-            <div class="" style="padding-left: 18px;">
-                <h3>Mathematics</h3>
-                <p>HOD</p>
-            </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-3">
-        <div class="panel panel-primary">
-            <div class="" style="padding-left: 18px;">
-                <h3>Mathematics</h3>
-                <p>HOD</p>
-            </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-3">
-        <div class="panel panel-primary">
-            <div class="" style="padding-left: 18px;">
-                <h3>Mathematics</h3>
-                <p>HOD</p>
-            </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-        </div>
-    </div>
 
     </div>
+
+
     {% include 'schapp/footer.html' %}
 
 {% endblock %}

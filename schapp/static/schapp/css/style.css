@@ -22,3 +22,10 @@ body {
 .banner-img {
     padding: 0;
 }
+
+#content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}

@@ -8,22 +8,22 @@
     <img src="{% static 'schapp/img/depart.jpg' %}" alt="" style="width: 100%; padding-top: 30px; height: 40%;">
 
         <div class="page-header">
-            <h1 class="text-center text-primary"> <strong>Clubs</strong></h1>
+            <h1 class="text-center text-primary"> <strong>Sports</strong></h1>
         </div>
     </div>
 </div>
 
     <br>
-        {% if cbs %}
-            {% for c in cbs %}
+        {% if games %}
+            {% for g in games %}
     <div class="col-sm-3">
         <div class="panel panel-primary">
             <div class="" style="padding-left: 18px;">
-                <h3>{{ c.name }}</h3>
-                <p>{{ c.patron }}</p>
+                <h3>{{ g.name }}</h3>
+                <p></p>
             </div>
-            <div class="panel-body">
-                <p>{{ c.desc }}
+            <div class="panel-body" style="height: 33%;">
+                <p>{{ g.desc }}</p>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="margin: 4px;">More</button>
 
                 <!-- Modal -->

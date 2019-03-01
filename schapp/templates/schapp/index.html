@@ -14,22 +14,23 @@
 <!-- About Section -->
 <div class="row">
     <br>
+
+    {% for m in missions %}
     <div class="col-md-3">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="text-primary"><i class="fa fa-graduation-cap"></i>
-                    Mission
+                    {{ m.title }}
                 </h3>
             </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                   It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                   essentially unchanged.</p>
+            <div class="panel-body" style="height: 20%;">
+                <p>{{ m.desc }}</p>
             </div>
         </div>
     </div>
+    {% endfor %}
 
+{% for v in visions %}
     <div class="col-md-3">
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -37,15 +38,15 @@
                     Vision
                 </h3>
             </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                   It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                   essentially unchanged.</p>
+            <div class="panel-body" style="height: 20%;">
+                <p>{{ v.desc }}</p>
             </div>
         </div>
     </div>
+{% endfor %}
 
+
+{% for a in anthems %}
     <div class="col-md-3">
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -53,15 +54,15 @@
                     Anthem
                 </h3>
             </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                   It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                   essentially unchanged.</p>
+            <div class="panel-body" style="height: 20%;">
+                <p>{{ a.desc }}</p>
             </div>
         </div>
     </div>
+{% endfor %}
 
+
+{% for m in mottos %}
     <div class="col-md-3">
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -69,16 +70,16 @@
                     Motto
                 </h3>
             </div>
-            <div class="panel-body">
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                   It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                   essentially unchanged.</p>
+            <div class="panel-body" style="height: 20%;">
+                <p>{{ m.desc }}</p>
             </div>
 
         </div>
     </div>
+{% endfor %}
 </div>
+
+
     <!-- End of About -->
 
        <!-- Staff section -->
@@ -111,21 +112,22 @@
             <h3 class="text-primary text-center text-head"><b>Events</b></h3>
         </div>
 
+        {% if events %}
+            {% for event in events %}
         <div class="col-md-3">
         <div class="panel panel-primary">
             <div class="panel-body">
-                <img src="{% static 'schapp/img/soda.jpg' %}" alt="" class="img img-thumbnail" style="height: 250px; width: 250px;">
+                <img src="{{ event.image.url }}" alt="" class="img img-thumbnail" style="height: 250px; width: 250px;">
                 <hr>
-                <h3 class="text-primary">Title <small class="text-primary" style="float: right;">Date</small></h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h3 class="text-primary">{{ event.title }} <small class="text-primary" style="float: right;">Date: {{ event.date }}</small></h3>
+                <p>{{ event.desc }}</p>
             </div>
             <div style="padding-left: 10px;">
-                <button type="button" class="btn btn-success" id="myBtn" style="margin: 4px;">More</button>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="margin: 4px;">More</button>
             </div>
 
             <!-- Modal -->
-                    <div class="modal fade" id="Modal" role="dialog">
+                    <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->
@@ -150,51 +152,11 @@
 
         </div>
         </div>
+            {% endfor %}
+        {% endif %}
 
-         <div class="col-md-3">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <img src="{% static 'schapp/img/soda.jpg' %}" alt="" class="img img-thumbnail" style="height: 250px; width: 250px;">
-                <hr>
-                <h3 class="text-primary">Title <small class="text-primary" style="float: right;">Date</small></h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-            <div style="padding-left: 10px;">
-                <button type="button" class="btn btn-success" style="margin: 4px;">More</button>
-            </div>
-        </div>
-        </div>
 
-         <div class="col-md-3">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <img src="{% static 'schapp/img/soda.jpg' %}" alt="" class="img img-thumbnail" style="height: 250px; width: 250px;">
-                <hr>
-                <h3 class="text-primary">Title <small class="text-primary" style="float: right;">Date</small></h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-            <div style="padding-left: 10px;">
-                <button type="button" class="btn btn-success" style="margin: 4px;">More</button>
-            </div>
-        </div>
-        </div>
 
-         <div class="col-md-3">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <img src="{% static 'schapp/img/soda.jpg' %}" alt="" class="img img-thumbnail" style="height: 250px; width: 250px;">
-                <hr>
-                <h3 class="text-primary">Title <small class="text-primary" style="float: right;">Date</small></h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-            <div style="padding-left: 10px;">
-                <button type="button" class="btn btn-success" style="margin: 4px;">More</button>
-            </div>
-        </div>
-        </div>
     </div>
 
     <!-- End of Events -->
@@ -206,21 +168,22 @@
             <h3 class="text-center text-primary text-head"><b>Blog</b></h3>
         </div>
 
+        {% if posts %}
+        {% for post in posts %}
         <div class="col-md-4">
         <div class="panel panel-primary">
             <div class="panel-body">
-                <img src="{% static 'schapp/img/soda.jpg' %}" alt="" class="img img-thumbnail" style="height: 250px; width: 328px;">
+                <img src="{{ post.image.url }}" alt="" class="img img-thumbnail" style="height: 250px; width: 328px;">
                 <hr>
-                <h3 class="text-primary">Title <small class="text-primary" style="float: right;">Date</small></h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h3 class="text-primary">{{ post.title }} <small class="text-primary" style="float: right;">Date: {{ post.date }}</small></h3>
+                <p>{{ post.content }}</p>
             </div>
             <div style="padding-left: 10px;">
-                <button type="button" class="btn btn-success" style="margin: 4px;" id="myBtn1">More</button>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="margin: 4px;">More</button>
             </div>
 
             <!-- Modal -->
-                    <div class="modal fade" id="Modal1" role="dialog">
+                    <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->
@@ -246,36 +209,10 @@
 
         </div>
         </div>
+            {% endfor %}
+        {% endif %}
 
-        <div class="col-md-4">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <img src="{% static 'schapp/img/soda.jpg' %}" alt="" class="img img-thumbnail" style="height: 250px; width: 328px;">
-                <hr>
-                <h3 class="text-primary">Title <small class="text-primary" style="float: right;">Date</small></h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-            <div style="padding-left: 10px;">
-                <button type="button" class="btn btn-success" style="margin: 4px;">More</button>
-            </div>
-        </div>
-        </div>
 
-        <div class="col-md-4">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <img src="{% static 'schapp/img/soda.jpg' %}" alt="" class="img img-thumbnail" style="height: 250px; width: 328px;">
-                <hr>
-                <h3 class="text-primary">Title <small class="text-primary" style="float: right;">Date</small></h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-            <div style="padding-left: 10px;">
-                <button type="button" class="btn btn-success" style="margin: 4px;">More</button>
-            </div>
-        </div>
-        </div>
 
     </div>
     <!-- End of Blog -->
